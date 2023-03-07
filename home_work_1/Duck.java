@@ -1,6 +1,6 @@
 public class Duck extends Animal {
-    public Duck(String color, int legsCount) {
-        super(color, legsCount);
+    public Duck(String name,String color) {
+        super(name, color, 2, true,false,true);
     }
 
     @Override
@@ -8,7 +8,9 @@ public class Duck extends Animal {
         System.out.printf("%s сказал: Кря!%n", getType());
     }
 
-    public void fly() {
-        System.out.printf("%s полетел!%n", getType());
-    }
+//    @Override
+//    public void action() {
+//        System.out.printf("%s-полетел", getType());
+//    }
+
 }

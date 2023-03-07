@@ -4,33 +4,35 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Animal animal = new Animal();
         Animal vaska = new Cat("Васька", "серый");
 
         System.out.println(vaska);
         System.out.println(vaska.getType());
 
-        animal.speak();
         vaska.speak();
-        Duck duck = new Duck("пёстрый", 2);
+        Duck duck = new Duck("пёстрый", "коричневый");
         System.out.println(duck);
         Dog dog = new Dog("Шарик", "рыжий");
+        Eagle eagle = new Eagle("Орел");
+        Shark shark = new Shark("Акула");
 
         List<Animal> animals = new ArrayList<>();
         animals.add(vaska);
+        animals.add(new Fish("Немо"));
+        animals.add(new Raven("Ворон"));
+        animals.add(shark);
+        animals.add(eagle);
         animals.add(duck);
         animals.add(dog);
-        animals.add(animal);
         animals.forEach(Animal::speak);
-        System.out.println("--------летчики------------");
+//        System.out.println("--------летчики------------");
 
-        for (Animal a: animals) {
-            if (a instanceof Duck) {
-                ((Duck) a).fly();
-            }
+        for (Animal a : animals) {
+            a.action();
         }
-        System.out.println("--------охота------------");
+//         System.out.println("--------охота------------");
 
         vaska.hunt();
+
     }
 }
