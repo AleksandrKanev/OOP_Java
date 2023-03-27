@@ -1,0 +1,12 @@
+package home_work_7.dao;
+
+import java.util.List;
+
+/**
+ * Data Access Object (DAO) סכמי ס לועמהמל בה
+ * @param <T> ??? ??????? ??? ??????/??????.
+ */
+public interface Operation<T> {
+    List<T> readAll();
+    void saveAll(List<T> data);
+}
